@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maram Othmani | UI/UX Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      background: #fefefe;
+      color: #333;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Floating pink circles */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,192,203,0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,182,193,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(255,182,193,0.1) 0%, transparent 50%);
+      animation: floatBackground 20s ease-in-out infinite;
+    }
+
+    @keyframes floatBackground {
+      0%,
+      100% {
+        background-position: 0% 0%, 100% 100%, 50% 100%;
+      }
+      50% {
+        background-position: 10% 10%, 90% 60%, 48% 80%;
+      }
+    }
+
+    header {
+      background: #fee2d4;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+    header h1 {
+      font-family: "DM Serif Display", serif;
+      font-size: 3em;
+      margin: 0;
+      line-height: 1.1;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .header-controls {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .btn-toggle {
+      background: transparent;
+      border: 2px solid #d46b8f;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #d46b8f;
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1em;
+    }
+    .btn-toggle:hover {
+      background-color: #d46b8f;
+      color: white;
+    }
+    .btn-toggle i {
+      font-size: 1.1em;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a.active {
+      color: #d46b8f;
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      background-color: #fbb6c2;
+      border-radius: 3px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: 2.5em;
+      color: #111;
+      margin-bottom: 30px;
+    }
+
+    /* About section layout */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #about > div:first-child {
+      flex: 1 1 55%;
+      min-width: 280px;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+    #about > div:last-child {
+      flex: 0 0 260px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #about img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+      outline: none;
+      transition: none;
+      user-select: none;
+    }
+
+    .skills-tags span {
+      display: inline-block;
+      background: #fee2d4;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 10px;
+      margin: 5px;
+      font-size: 0.95em;
+    }
+
+    .project-card {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    footer {
+      background: #f8d5c0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-dialog {
+      max-width: 1440px;
+      width: 100%;
+      margin: 1rem auto;
+    }
+
+    .modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1050;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #modalImage {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    body.dark-mode header {
+      background: #2a1a1a;
+      color: #fbb6c2;
+    }
+    body.dark-mode nav {
+      background: #1f1f1f;
+      box-shadow: none;
+    }
+    body.dark-mode nav a {
+      color: #ddd;
+    }
+    body.dark-mode nav a.active {
+      color: #fbb6c2;
+    }
+    body.dark-mode nav a.active::after {
+      background-color: #d46b8f;
+    }
+    body.dark-mode .skills-tags span {
+      background: #4a2a3b;
+      color: #fbb6c2;
+    }
+    body.dark-mode footer {
+      background: #2a1a1a;
+      color: #fbb6c2;
+    }
+    body.dark-mode .socials a {
+      color: #fbb6c2;
+    }
+    body.dark-mode .modal-header {
+      background: #2a1a1a;
+      border-color: #4a2a3b;
+    }
+    body.dark-mode h2 {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Maram Othmani</h1>
+    <p>Designing intuitive experiences that connect people and purpose.</p>
+
+    <div class="header-controls">
+      <button class="btn-toggle lang-toggle" aria-label="Toggle language">EN</button>
+      <button class="btn-toggle dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fa-regular fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container justify-content-center">
+      <a class="nav-link active" href="#about">About</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="about" class="section">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.
+      </p>
+    </div>
+    <div>
+      <img src="images/img.png" alt="Maram Othmani" />
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('Chalet Sissi | Website UI/UX Design', 'images/presentation.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/slice5.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="Chalet Sissi"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('Online Thrift | Mobile Application | UI Design', 'images/onlinethrift.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/onlinethrift.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="Online Thrift"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('Eco Tic | UI/UX Design', 'images/ecotic.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/Slice.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="Eco Tic"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('FairPlay Digital | UI/UX Design', 'images/fairplay.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/Slice7.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="FairPlay Digital"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('InstaMeal | Mobile Application UI Design', 'images/instameal.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/Slice1.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="InstaMeal"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('CraftHeaven | Home Page UI Design', 'images/craftheaven.jpg')"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/Slice2.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="CraftHeaven"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-tags">
+      <span>Wireframing</span>
+      <span>Prototyping</span>
+      <span>User Flows</span>
+      <span>Responsive Design</span>
+      <span>Figma</span>
+      <span>Adobe XD</span>
+      <span>Photoshop</span>
+      <span>Illustrator</span>
+      <span>3D Modeling</span>
+      <span>Video Editing</span>
+      <span>HTML/CSS</span>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>
+      You can reach me at
+      <a href="mailto:outmaram04@gmail.com">outmaram04@gmail.com</a> or use my social
+      links below.
+    </p>
+  </section>
+
+  <footer>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/maram-othmani/" target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://www.behance.net/maramothmaniii" target="_blank"
+        ><i class="fab fa-behance"></i
+      ></a>
+      <a href="https://wa.me/21622918941" target="_blank"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </div>
+    <p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
+  </footer>
+
+  <!-- Modal HTML -->
+  <div
+    class="modal fade"
+    id="projectModal"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" alt="Project Full View" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, imageUrl) {
+      const modalTitle = document.getElementById("modalTitle");
+      const modalImage = document.getElementById("modalImage");
+
+      modalTitle.textContent = title;
+      modalImage.style.display = "none";
+      modalImage.src = imageUrl;
+
+      modalImage.onload = () => {
+        modalImage.style.display = "block";
+      };
+
+      modalImage.onerror = () => {
+        modalImage.style.display = "none";
+        modalTitle.textContent = "Failed to load image";
+      };
+
+      const myModal = new bootstrap.Modal(
+        document.getElementById("projectModal")
+      );
+      myModal.show();
+    }
+
+    // Active nav underline on scroll
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = Array.from(navLinks).map((link) =>
+      document.querySelector(link.getAttribute("href"))
+    );
+
+    window.addEventListener("scroll", () => {
+      let index = sections.findIndex(
+        (section) => section.getBoundingClientRect().top > 50
+      );
+      index = index === -1 ? sections.length - 1 : index - 1;
+      if (index < 0) index = 0;
+
+      navLinks.forEach((link) => link.classList.remove("active"));
+      if (sections[index]) {
+        navLinks[index].classList.add("active");
+      }
+    });
+
+    // Dark mode toggle
+    const darkModeBtn = document.querySelector(".dark-mode-toggle");
+    darkModeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = darkModeBtn.querySelector("i");
+      if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    });
+
+    // Language toggle (English / French)
+    const langBtn = document.querySelector(".lang-toggle");
+    const texts = {
+      en: {
+        aboutTitle: "About Me",
+        aboutText:
+          "Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.",
+        projectsTitle: "My Projects",
+        skillsTitle: "Skills",
+        contactTitle: "Contact Me",
+        headerSubtitle: "Designing intuitive experiences that connect people and purpose.",
+        navAbout: "About",
+        navProjects: "Projects",
+        navSkills: "Skills",
+        navContact: "Contact",
+        contactText:
+          "You can reach me at <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> or use my social links below."
+      },
+      fr: {
+        aboutTitle: "À Propos",
+        aboutText:
+          "Bonjour! Je suis Maram, une designer UI/UX avec une âme créative et une passion pour créer des expériences digitales fluides et agréables. Avec une formation en multimédia et design graphique, j'aime transformer les idées en interfaces intuitives et élégantes! Que ce soit une application mobile ou un site web. Je tiens profondément à rendre la technologie humaine, accessible et agréable pour tous.",
+        projectsTitle: "Mes Projets",
+        skillsTitle: "Compétences",
+        contactTitle: "Contactez-moi",
+        headerSubtitle:
+          "Concevoir des expériences intuitives qui connectent les personnes et le sens.",
+        navAbout: "À Propos",
+        navProjects: "Projets",
+        navSkills: "Compétences",
+        navContact: "Contact",
+        contactText:
+          "Vous pouvez me joindre à <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> ou utiliser mes liens sociaux ci-dessous."
+      }
+    };
+    let currentLang = "en";
+
+    function updateText(languageData) {
+      document.querySelector("#about h2").textContent = languageData.aboutTitle;
+      document.querySelector("#about p").textContent = languageData.aboutText;
+      document.querySelector("#projects h2").textContent = languageData.projectsTitle;
+      document.querySelector("#skills h2").textContent = languageData.skillsTitle;
+      document.querySelector("#contact h2").textContent = languageData.contactTitle;
+      document.querySelector("header p").textContent = languageData.headerSubtitle;
+
+      // Navbar links
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks[0].textContent = languageData.navAbout;
+      navLinks[1].textContent = languageData.navProjects;
+      navLinks[2].textContent = languageData.navSkills;
+      navLinks[3].textContent = languageData.navContact;
+
+      // Contact text with links (use innerHTML)
+      document.querySelector("#contact p").innerHTML = languageData.contactText;
+    }
+
+    langBtn.addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "fr" : "en";
+      langBtn.textContent = currentLang.toUpperCase();
+      updateText(texts[currentLang]);
+    });
+
+    // Initialize with English text
+    updateText(texts.en);
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
