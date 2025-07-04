@@ -76,6 +76,20 @@
       max-width: 600px;
     }
 
+    /* NEW: Logo container top-left, same level as right icons */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      height: 40px;
+    }
+    .logo-container img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
     .header-controls {
       position: absolute;
       top: 20px;
@@ -285,6 +299,12 @@
 </head>
 <body>
   <header>
+    <!-- LOGO top-left -->
+    <div class="logo-container">
+      <img src="images/logo-light.png" alt="Logo" class="logo-light" />
+      <img src="images/logo-dark.png" alt="Logo" class="logo-dark" style="display:none;" />
+    </div>
+
     <h1>Maram Othmani</h1>
     <p>Designing intuitive experiences that connect people and purpose.</p>
 
@@ -301,6 +321,7 @@
       <a class="nav-link active" href="#about">About</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -454,7 +475,7 @@
   </footer>
 
   <!-- Modal HTML -->
- <div
+  <div
     class="modal fade"
     id="projectModal"
     tabindex="-1"
@@ -502,106 +523,73 @@
       myModal.show();
     }
 
-    // Active nav underline on scroll
+    // Active nav underline on scroll - Updated version
     const navLinks = document.querySelectorAll("nav a");
     const sections = Array.from(navLinks).map((link) =>
       document.querySelector(link.getAttribute("href"))
     );
 
     window.addEventListener("scroll", () => {
-      let index = sections.findIndex(
-        (section) => section.getBoundingClientRect().top > 50
-      );
-      index = index === -1 ? sections.length - 1 : index - 1;
-      if (index < 0) index = 0;
+      // Get the current scroll position and add a small offset for better detection
+      const scrollPosition = window.scrollY + (window.innerHeight / 3);
 
+      // Find the current section by checking which one is in view
+      let currentSectionIndex = sections.findIndex((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = window.scrollY + rect.top;
+        const sectionBottom = sectionTop + rect.height;
+        return scrollPosition >= sectionTop && scrollPosition < sectionBottom;
+      });
+
+      // If no section is found (e.g., between sections), find the nearest one
+      if (currentSectionIndex === -1) {
+        currentSectionIndex = sections.reduce((nearest, section, index) => {
+          const rect = section.getBoundingClientRect();
+          const distance = Math.abs(rect.top);
+          if (nearest.distance === null || distance < nearest.distance) {
+            return { index, distance };
+          }
+          return nearest;
+        }, { index: 0, distance: null }).index;
+      }
+
+      // Remove active from all links
       navLinks.forEach((link) => link.classList.remove("active"));
-      if (sections[index]) {
-        navLinks[index].classList.add("active");
+
+      // Add active to the current link
+      if (navLinks[currentSectionIndex]) {
+        navLinks[currentSectionIndex].classList.add("active");
       }
     });
 
     // Dark mode toggle
-    const darkModeBtn = document.querySelector(".dark-mode-toggle");
-    darkModeBtn.addEventListener("click", () => {
+    const darkModeToggle = document.querySelector(".dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-      const icon = darkModeBtn.querySelector("i");
-      if (document.body.classList.contains("dark-mode")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
+
+      // Toggle logo images
+      document.querySelectorAll(".logo-light, .logo-dark").forEach((img) => {
+        if (document.body.classList.contains("dark-mode")) {
+          if (img.classList.contains("logo-light")) img.style.display = "none";
+          if (img.classList.contains("logo-dark")) img.style.display = "block";
+        } else {
+          if (img.classList.contains("logo-light")) img.style.display = "block";
+          if (img.classList.contains("logo-dark")) img.style.display = "none";
+        }
+      });
+    });
+
+    // Language toggle (just for example)
+    const langToggle = document.querySelector(".lang-toggle");
+    langToggle.addEventListener("click", () => {
+      if (langToggle.textContent === "EN") {
+        langToggle.textContent = "FR";
       } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
+        langToggle.textContent = "EN";
       }
     });
-
-    // Language toggle (English / French)
-    const langBtn = document.querySelector(".lang-toggle");
-    const texts = {
-      en: {
-        aboutTitle: "About Me",
-        aboutText:
-          "Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.",
-        projectsTitle: "My Projects",
-        skillsTitle: "Skills",
-        contactTitle: "Contact Me",
-        headerSubtitle: "Designing intuitive experiences that connect people and purpose.",
-        navAbout: "About",
-        navProjects: "Projects",
-        navSkills: "Skills",
-        navContact: "Contact",
-        contactText:
-          "You can reach me at <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> or use my social links below."
-      },
-      fr: {
-        aboutTitle: "À Propos",
-        aboutText:
-          "Bonjour! Je suis Maram, une designer UI/UX avec une âme créative et une passion pour créer des expériences digitales fluides et agréables. Avec une formation en multimédia et design graphique, j'aime transformer les idées en interfaces intuitives et élégantes! Que ce soit une application mobile ou un site web. Je tiens profondément à rendre la technologie humaine, accessible et agréable pour tous.",
-        projectsTitle: "Mes Projets",
-        skillsTitle: "Compétences",
-        contactTitle: "Contactez-moi",
-        headerSubtitle:
-          "Concevoir des expériences intuitives qui connectent les personnes et le sens.",
-        navAbout: "À Propos",
-        navProjects: "Projets",
-        navSkills: "Compétences",
-        navContact: "Contact",
-        contactText:
-          "Vous pouvez me joindre à <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> ou utiliser mes liens sociaux ci-dessous."
-      }
-    };
-    let currentLang = "en";
-
-    function updateText(languageData) {
-      document.querySelector("#about h2").textContent = languageData.aboutTitle;
-      document.querySelector("#about p").textContent = languageData.aboutText;
-      document.querySelector("#projects h2").textContent = languageData.projectsTitle;
-      document.querySelector("#skills h2").textContent = languageData.skillsTitle;
-      document.querySelector("#contact h2").textContent = languageData.contactTitle;
-      document.querySelector("header p").textContent = languageData.headerSubtitle;
-
-      // Navbar links
-      const navLinks = document.querySelectorAll("nav a");
-      navLinks[0].textContent = languageData.navAbout;
-      navLinks[1].textContent = languageData.navProjects;
-      navLinks[2].textContent = languageData.navSkills;
-      navLinks[3].textContent = languageData.navContact;
-
-      // Contact text with links (use innerHTML)
-      document.querySelector("#contact p").innerHTML = languageData.contactText;
-    }
-
-    langBtn.addEventListener("click", () => {
-      currentLang = currentLang === "en" ? "fr" : "en";
-      langBtn.textContent = currentLang.toUpperCase();
-      updateText(texts[currentLang]);
-    });
-
-    // Initialize with English text
-    updateText(texts.en);
   </script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
