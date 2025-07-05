@@ -17,6 +17,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <style>
+    /* Your existing CSS here (unchanged) */
     body {
       font-family: "Open Sans", sans-serif;
       background: #fefefe;
@@ -246,7 +247,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
     }
 
     body.dark-mode {
@@ -286,6 +287,7 @@
       border-color: #4a2a3b;
     }
     body.dark-mode .modal-content {
+<<<<<<< HEAD
   background-color: #1f1f1f;
   color: #eee;
 }
@@ -308,10 +310,32 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 body.dark-mode ::-webkit-scrollbar-thumb:hover {
   background-color: #aaa;
 }
+=======
+      background-color: #1f1f1f;
+      color: #eee;
+    }
+    body.dark-mode .btn-close {
+      filter: invert(1);
+    }
+    body.dark-mode ::-webkit-scrollbar {
+      width: 8px;
+    }
+    body.dark-mode ::-webkit-scrollbar-track {
+      background: #1f1f1f;
+    }
+    body.dark-mode ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+    body.dark-mode ::-webkit-scrollbar-thumb:hover {
+      background-color: #aaa;
+    }
+>>>>>>> 59ab65e (Add video and other updates)
 
     body.dark-mode h2 {
       color: #fff;
     }
+<<<<<<< HEAD
     @media (max-width: 576px) {
   #mode-logo {
     height: 50px;
@@ -363,6 +387,68 @@ header h1 {
   font-size: 1em;
   padding: 8px 14px;
   border-width: 2px;
+=======
+
+    @media (max-width: 576px) {
+      #mode-logo {
+        height: 50px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .header-controls {
+        top: 15px;
+        right: 10px;
+      }
+
+      .btn-toggle {
+        font-size: 0.8em;
+        padding: 4px 8px;
+      }
+    }
+    header h1 {
+      margin-top: 60px;
+    }
+
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2em;
+        margin-top: 80px;   
+      }
+
+      header p {
+        font-size: 1em;
+        margin-top: 10px;
+      }
+    }
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      #about > div:first-child {
+        max-width: 100%;
+      }
+
+      #about > div:last-child {
+        margin-top: 20px;
+      }
+    }
+    .btn-toggle {
+      font-size: 1em;
+      padding: 8px 14px;
+      border-width: 2px;
+    }
+    .text-center {
+  text-align: center;
+  width: 100%;
+}
+#seeMoreBtn {
+  display: inline-block;
+  margin: 0 auto;
+>>>>>>> 59ab65e (Add video and other updates)
 }
 
   </style>
@@ -494,6 +580,24 @@ header h1 {
           </div>
         </div>
       </div>
+      <div class="col extra-project d-none">
+        <div
+          class="card project-card overflow-hidden"
+          onclick="openModal('Alerta - UX/UI Study case', 'images/alerta.jpg', true)"
+        >
+          <div class="ratio ratio-1x1">
+            <img
+              src="images/Slice10.jpg"
+              class="w-100 h-100"
+              style="object-fit: cover; object-position: top;"
+              alt="Alerta"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+  <button id="seeMoreBtn" class="btn btn-toggle">See More</button>
+</div>
     </div>
   </section>
 
@@ -509,9 +613,15 @@ header h1 {
       <span>Photoshop</span>
       <span>Illustrator</span>
       <span>3D Modeling</span>
+<<<<<<< HEAD
         <span>HTML/CSS</span>
       <span>Video Editing</span>
   <span>Bootstrap (Framework)</span>
+=======
+      <span>HTML/CSS</span>
+      <span>Video Editing</span>
+      <span>Bootstrap (Framework)</span>
+>>>>>>> 59ab65e (Add video and other updates)
     </div>
   </section>
 
@@ -533,19 +643,28 @@ header h1 {
         ><i class="fab fa-behance"></i
       ></a>
       <a href="https://wa.me/21622918941" target="_blank"
+<<<<<<< HEAD
         ><i class="fa-brands fa-square-whatsapp"></i>
 </a>
+=======
+        ><i class="fa-brands fa-square-whatsapp"></i
+      ></a>
+>>>>>>> 59ab65e (Add video and other updates)
     </div>
     <p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
   </footer>
 
+<<<<<<< HEAD
+=======
+  <!-- Modal -->
+>>>>>>> 59ab65e (Add video and other updates)
   <div
     class="modal fade"
     id="projectModal"
     tabindex="-1"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalTitle"></h5>
@@ -556,37 +675,59 @@ header h1 {
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body text-center">
-          <img id="modalImage" src="" alt="Project Full View" />
+        <div class="modal-body text-center" id="modalBody">
+          <!-- Image always shown -->
+          <img
+            id="modalImage"
+            src=""
+            alt="Project Full View"
+            style="max-width: 100%; margin-bottom: 20px;"
+          />
+
+          <!-- Video shown only if hasVideo is true -->
+          <div id="modalVideoWrapper" class="d-none">
+            <video
+              id="modalVideo"
+              class="w-100"
+              controls
+              style="max-height: 500px;"
+            >
+              <source id="modalVideoSource" src="" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    function openModal(title, imageUrl) {
+    // Open modal with title, image, and optional video
+    function openModal(title, imageUrl, hasVideo = false) {
       const modalTitle = document.getElementById("modalTitle");
       const modalImage = document.getElementById("modalImage");
+      const modalVideoWrapper = document.getElementById("modalVideoWrapper");
+      const modalVideoSource = document.getElementById("modalVideoSource");
+      const modalVideo = document.getElementById("modalVideo");
 
       modalTitle.textContent = title;
-      modalImage.style.display = "none";
       modalImage.src = imageUrl;
+      modalImage.classList.remove("d-none");
 
-      modalImage.onload = () => {
-        modalImage.style.display = "block";
-      };
+      if (hasVideo) {
+        modalVideoWrapper.classList.remove("d-none");
+        modalVideoSource.src = "videos/alerta-vd.mp4"; // Adjust path if needed
+        modalVideo.load();
+      } else {
+        modalVideoWrapper.classList.add("d-none");
+        modalVideoSource.src = "";
+      }
 
-      modalImage.onerror = () => {
-        modalImage.style.display = "none";
-        modalTitle.textContent = "Failed to load image";
-      };
-
-      const myModal = new bootstrap.Modal(
-        document.getElementById("projectModal")
-      );
+      const myModal = new bootstrap.Modal(document.getElementById("projectModal"));
       myModal.show();
     }
 
+<<<<<<< HEAD
     const navLinks = document.querySelectorAll("nav a");
     const sections = Array.from(navLinks).map((link) =>
       document.querySelector(link.getAttribute("href"))
@@ -626,6 +767,28 @@ header h1 {
     darkModeBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
 
+=======
+    // See More button
+    document.getElementById("seeMoreBtn").addEventListener("click", () => {
+      document.querySelectorAll(".extra-project").forEach((el) => el.classList.remove("d-none"));
+      document.getElementById("seeMoreBtn").classList.add("d-none");
+    });
+
+    // Navigation active link highlighting
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        navLinks.forEach((l) => l.classList.remove("active"));
+        e.target.classList.add("active");
+      });
+    });
+
+    // Dark mode toggle
+    const darkModeToggle = document.querySelector(".dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = darkModeToggle.querySelector("i");
+>>>>>>> 59ab65e (Add video and other updates)
       if (document.body.classList.contains("dark-mode")) {
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
@@ -637,7 +800,12 @@ header h1 {
       }
     });
 
+<<<<<<< HEAD
 const langToggleBtn = document.querySelector(".lang-toggle");
+=======
+    // Language toggle (English/French placeholder)
+   const langToggleBtn = document.querySelector(".lang-toggle");
+>>>>>>> 59ab65e (Add video and other updates)
 
 const translations = {
   en: {
@@ -660,12 +828,20 @@ const translations = {
   }
 };
 
+<<<<<<< HEAD
 let currentLang = "en";
+=======
+let currentLang = "en";  // start language
+>>>>>>> 59ab65e (Add video and other updates)
 
 langToggleBtn.addEventListener("click", () => {
   currentLang = currentLang === "en" ? "fr" : "en";
   langToggleBtn.textContent = currentLang.toUpperCase();
 
+<<<<<<< HEAD
+=======
+  // update all translatable content
+>>>>>>> 59ab65e (Add video and other updates)
   document.querySelector("header p").innerHTML = translations[currentLang].headerParagraph;
   document.querySelector("#about h2").textContent = translations[currentLang].aboutTitle;
   document.querySelector("#about > div:first-child p").textContent = translations[currentLang].aboutText;
@@ -676,6 +852,7 @@ langToggleBtn.addEventListener("click", () => {
 });
 
   </script>
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"
