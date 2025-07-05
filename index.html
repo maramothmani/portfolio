@@ -285,6 +285,30 @@
       background: #2a1a1a;
       border-color: #4a2a3b;
     }
+    body.dark-mode .modal-content {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+body.dark-mode .btn-close {
+  filter: invert(1);
+}
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
     body.dark-mode h2 {
       color: #fff;
     }
