@@ -287,7 +287,6 @@
       border-color: #4a2a3b;
     }
     body.dark-mode .modal-content {
-<<<<<<< HEAD
   background-color: #1f1f1f;
   color: #eee;
 }
@@ -310,7 +309,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 body.dark-mode ::-webkit-scrollbar-thumb:hover {
   background-color: #aaa;
 }
-=======
+
       background-color: #1f1f1f;
       color: #eee;
     }
@@ -330,12 +329,10 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
     body.dark-mode ::-webkit-scrollbar-thumb:hover {
       background-color: #aaa;
     }
->>>>>>> 59ab65e (Add video and other updates)
 
     body.dark-mode h2 {
       color: #fff;
     }
-<<<<<<< HEAD
     @media (max-width: 576px) {
   #mode-logo {
     height: 50px;
@@ -387,7 +384,6 @@ header h1 {
   font-size: 1em;
   padding: 8px 14px;
   border-width: 2px;
-=======
 
     @media (max-width: 576px) {
       #mode-logo {
@@ -448,410 +444,248 @@ header h1 {
 #seeMoreBtn {
   display: inline-block;
   margin: 0 auto;
->>>>>>> 59ab65e (Add video and other updates)
+ (Add video and other updates)
 }
 
   </style>
 </head>
 <body>
-  <header>
+<header>
+  <h1>Maram Othmani</h1>
+  <p>Designing intuitive experiences that connect people and purpose.</p>
+  <div class="header-controls">
+    <button class="btn-toggle lang-toggle" aria-label="Toggle language">EN</button>
+    <button class="btn-toggle dark-mode-toggle" aria-label="Toggle dark mode">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+  </div>
+</header>
 
-    <h1>Maram Othmani</h1>
-    <p>Designing intuitive experiences that connect people and purpose.</p>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container justify-content-center">
+    <a class="nav-link active" href="#about">About</a>
+    <a class="nav-link" href="#projects">Projects</a>
+    <a class="nav-link" href="#skills">Skills</a>
+  </div>
+</nav>
 
-    <div class="header-controls">
-      <button class="btn-toggle lang-toggle" aria-label="Toggle language">EN</button>
-      <button class="btn-toggle dark-mode-toggle" aria-label="Toggle dark mode">
-        <i class="fa-regular fa-moon"></i>
-      </button>
-    </div>
-  </header>
-
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container justify-content-center">
-      <a class="nav-link active" href="#about">About</a>
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#skills">Skills</a>
-    </div>
-  </nav>
-
-  <section id="about" class="section">
-    <div>
-      <h2>About Me</h2>
-      <p>
-        Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.
-      </p>
-    </div>
-    <div>
-      <img src="images/img.png" alt="Maram Othmani" />
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>My Projects</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('Online Thrift | Mobile Application | UI Design', 'images/onlinethrift.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/onlinethrift.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="Online Thrift"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('Eco Tic | UI/UX Design', 'images/ecotic.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="Eco Tic"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('FairPlay Digital | UI/UX Design', 'images/fairplay.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice7.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="FairPlay Digital"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('InstaMeal | Mobile Application UI Design', 'images/instameal.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice1.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="InstaMeal"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('CraftHeaven | Home Page UI Design', 'images/craftheaven.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice2.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="CraftHeaven"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('Chalet Sissi | Website UI/UX Design', 'images/presentation.jpg')"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice5.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="Chalet Sissi"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col extra-project d-none">
-        <div
-          class="card project-card overflow-hidden"
-          onclick="openModal('Alerta - UX/UI Study case', 'images/alerta.jpg', true)"
-        >
-          <div class="ratio ratio-1x1">
-            <img
-              src="images/Slice10.jpg"
-              class="w-100 h-100"
-              style="object-fit: cover; object-position: top;"
-              alt="Alerta"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-  <button id="seeMoreBtn" class="btn btn-toggle">See More</button>
-</div>
-    </div>
-  </section>
-
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-tags">
-      <span>Wireframing</span>
-      <span>Prototyping</span>
-      <span>User Flows</span>
-      <span>Responsive Design</span>
-      <span>Figma</span>
-      <span>Adobe XD</span>
-      <span>Photoshop</span>
-      <span>Illustrator</span>
-      <span>3D Modeling</span>
-<<<<<<< HEAD
-        <span>HTML/CSS</span>
-      <span>Video Editing</span>
-  <span>Bootstrap (Framework)</span>
-=======
-      <span>HTML/CSS</span>
-      <span>Video Editing</span>
-      <span>Bootstrap (Framework)</span>
->>>>>>> 59ab65e (Add video and other updates)
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
+<section id="about" class="section">
+  <div>
+    <h2>About Me</h2>
     <p>
-      You can reach me at
-      <a href="mailto:outmaram04@gmail.com">outmaram04@gmail.com</a> or use my social
-      links below.
+      Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.
     </p>
-  </section>
+  </div>
+  <div>
+    <img src="images/img.png" alt="Maram Othmani" />
+  </div>
+</section>
 
-  <footer>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/maram-othmani/" target="_blank"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-      <a href="https://www.behance.net/maramothmaniii" target="_blank"
-        ><i class="fab fa-behance"></i
-      ></a>
-      <a href="https://wa.me/21622918941" target="_blank"
-<<<<<<< HEAD
-        ><i class="fa-brands fa-square-whatsapp"></i>
-</a>
-=======
-        ><i class="fa-brands fa-square-whatsapp"></i
-      ></a>
->>>>>>> 59ab65e (Add video and other updates)
-    </div>
-    <p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
-  </footer>
-
-<<<<<<< HEAD
-=======
-  <!-- Modal -->
->>>>>>> 59ab65e (Add video and other updates)
-  <div
-    class="modal fade"
-    id="projectModal"
-    tabindex="-1"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle"></h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+<section id="projects" class="section">
+  <h2>My Projects</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- 6 main projects -->
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('Online Thrift | Mobile Application | UI Design', 'images/onlinethrift.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/onlinethrift.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Online Thrift" />
         </div>
-        <div class="modal-body text-center" id="modalBody">
-          <!-- Image always shown -->
-          <img
-            id="modalImage"
-            src=""
-            alt="Project Full View"
-            style="max-width: 100%; margin-bottom: 20px;"
-          />
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('Eco Tic | UI/UX Design', 'images/ecotic.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Eco Tic" />
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('FairPlay Digital | UI/UX Design', 'images/fairplay.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice7.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="FairPlay Digital" />
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('InstaMeal | Mobile Application UI Design', 'images/instameal.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice1.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="InstaMeal" />
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('CraftHeaven | Home Page UI Design', 'images/craftheaven.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice2.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="CraftHeaven" />
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card project-card overflow-hidden" onclick="openModal('Chalet Sissi | Website UI/UX Design', 'images/presentation.jpg')">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice5.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Chalet Sissi" />
+        </div>
+      </div>
+    </div>
 
-          <!-- Video shown only if hasVideo is true -->
-          <div id="modalVideoWrapper" class="d-none">
-            <video
-              id="modalVideo"
-              class="w-100"
-              controls
-              style="max-height: 500px;"
-            >
-              <source id="modalVideoSource" src="" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+    <!-- Extra hidden project -->
+    <div class="col extra-project d-none">
+      <div class="card project-card overflow-hidden" onclick="openModal('Alerta - UX/UI Study case', 'images/alerta.jpg', true)">
+        <div class="ratio ratio-1x1">
+          <img src="images/Slice10.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Alerta" />
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button id="seeMoreBtn" class="btn btn-toggle">See More</button>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="skills-tags">
+    <span>Wireframing</span>
+    <span>Prototyping</span>
+    <span>User Flows</span>
+    <span>Responsive Design</span>
+    <span>Figma</span>
+    <span>Adobe XD</span>
+    <span>Photoshop</span>
+    <span>Illustrator</span>
+    <span>3D Modeling</span>
+    <span>HTML/CSS</span>
+    <span>Video Editing</span>
+    <span>Bootstrap (Framework)</span>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <p>You can reach me at <a href="mailto:outmaram04@gmail.com">outmaram04@gmail.com</a> or use my social links below.</p>
+</section>
+
+<footer>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/maram-othmani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.behance.net/maramothmaniii" target="_blank"><i class="fab fa-behance"></i></a>
+    <a href="https://wa.me/21622918941" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+  </div>
+  <p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center" id="modalBody">
+        <img id="modalImage" src="" alt="Project Full View" style="max-width: 100%; margin-bottom: 20px;" />
+        <div id="modalVideoWrapper" class="d-none">
+          <video id="modalVideo" class="w-100" controls style="max-height: 500px;">
+            <source id="modalVideoSource" src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    // Open modal with title, image, and optional video
-    function openModal(title, imageUrl, hasVideo = false) {
-      const modalTitle = document.getElementById("modalTitle");
-      const modalImage = document.getElementById("modalImage");
-      const modalVideoWrapper = document.getElementById("modalVideoWrapper");
-      const modalVideoSource = document.getElementById("modalVideoSource");
-      const modalVideo = document.getElementById("modalVideo");
+<!-- Script -->
+<script>
+  function openModal(title, imageUrl, hasVideo = false) {
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImage = document.getElementById("modalImage");
+    const modalVideoWrapper = document.getElementById("modalVideoWrapper");
+    const modalVideoSource = document.getElementById("modalVideoSource");
+    const modalVideo = document.getElementById("modalVideo");
 
-      modalTitle.textContent = title;
-      modalImage.src = imageUrl;
-      modalImage.classList.remove("d-none");
+    modalTitle.textContent = title;
+    modalImage.src = imageUrl;
+    modalImage.classList.remove("d-none");
 
-      if (hasVideo) {
-        modalVideoWrapper.classList.remove("d-none");
-        modalVideoSource.src = "videos/alerta-vd.mp4"; // Adjust path if needed
-        modalVideo.load();
-      } else {
-        modalVideoWrapper.classList.add("d-none");
-        modalVideoSource.src = "";
-      }
-
-      const myModal = new bootstrap.Modal(document.getElementById("projectModal"));
-      myModal.show();
+    if (hasVideo) {
+      modalVideoWrapper.classList.remove("d-none");
+      modalVideoSource.src = "videos/alerta-vd.mp4";
+      modalVideo.load();
+    } else {
+      modalVideoWrapper.classList.add("d-none");
+      modalVideoSource.src = "";
     }
 
-<<<<<<< HEAD
-    const navLinks = document.querySelectorAll("nav a");
-    const sections = Array.from(navLinks).map((link) =>
-      document.querySelector(link.getAttribute("href"))
-    );
-
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.scrollY + (window.innerHeight / 3);
-
-      let currentSectionIndex = sections.findIndex((section) => {
-        const rect = section.getBoundingClientRect();
-        const sectionTop = window.scrollY + rect.top;
-        const sectionBottom = sectionTop + rect.height;
-        return scrollPosition >= sectionTop && scrollPosition < sectionBottom;
-      });
-
-      if (currentSectionIndex === -1) {
-        currentSectionIndex = sections.reduce((nearest, section, index) => {
-          const rect = section.getBoundingClientRect();
-          const distance = Math.abs(rect.top);
-          if (nearest.distance === null || distance < nearest.distance) {
-            return { index, distance };
-          }
-          return nearest;
-        }, { index: 0, distance: null }).index;
-      }
-
-      navLinks.forEach((link) => link.classList.remove("active"));
-      if (sections[currentSectionIndex]) {
-        navLinks[currentSectionIndex].classList.add("active");
-      }
-    });
-
-    const darkModeBtn = document.querySelector(".dark-mode-toggle");
-    const icon = darkModeBtn.querySelector("i");
-    const logoImg = document.getElementById("mode-logo");
-
-    darkModeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-=======
-    // See More button
-    document.getElementById("seeMoreBtn").addEventListener("click", () => {
-      document.querySelectorAll(".extra-project").forEach((el) => el.classList.remove("d-none"));
-      document.getElementById("seeMoreBtn").classList.add("d-none");
-    });
-
-    // Navigation active link highlighting
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        navLinks.forEach((l) => l.classList.remove("active"));
-        e.target.classList.add("active");
-      });
-    });
-
-    // Dark mode toggle
-    const darkModeToggle = document.querySelector(".dark-mode-toggle");
-    darkModeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const icon = darkModeToggle.querySelector("i");
->>>>>>> 59ab65e (Add video and other updates)
-      if (document.body.classList.contains("dark-mode")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-        logoImg.src = "images/mylogo-pink.png";
-      } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-        logoImg.src = "images/mylogo-black.png";
-      }
-    });
-
-<<<<<<< HEAD
-const langToggleBtn = document.querySelector(".lang-toggle");
-=======
-    // Language toggle (English/French placeholder)
-   const langToggleBtn = document.querySelector(".lang-toggle");
->>>>>>> 59ab65e (Add video and other updates)
-
-const translations = {
-  en: {
-    headerParagraph: "Designing intuitive experiences that connect people and purpose.",
-    aboutTitle: "About Me",
-    aboutText: "Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.",
-    projectsTitle: "My Projects",
-    skillsTitle: "Skills",
-    contactTitle: "Contact Me",
-    contactText: "You can reach me at <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> or use my social links below."
-  },
-  fr: {
-    headerParagraph: "Créer des expériences intuitives qui relient les gens et le sens.",
-    aboutTitle: "À propos de moi",
-    aboutText: "Bonjour ! Je suis Maram, designer UI/UX avec une âme créative et une passion pour créer des expériences numériques fluides et agréables. Grâce à mon parcours en multimédia et design graphique, j’aime transformer les idées en interfaces intuitives et esthétiques, que ce soit pour une application mobile ou un site web. Je tiens profondément à rendre la technologie humaine, accessible et agréable pour tous.",
-    projectsTitle: "Mes Projets",
-    skillsTitle: "Compétences",
-    contactTitle: "Contactez-moi",
-    contactText: "Vous pouvez me joindre à <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> ou utiliser mes réseaux sociaux ci-dessous."
+    const myModal = new bootstrap.Modal(document.getElementById("projectModal"));
+    myModal.show();
   }
-};
 
-<<<<<<< HEAD
-let currentLang = "en";
-=======
-let currentLang = "en";  // start language
->>>>>>> 59ab65e (Add video and other updates)
+  document.getElementById("seeMoreBtn").addEventListener("click", () => {
+    document.querySelectorAll(".extra-project").forEach((el) => el.classList.remove("d-none"));
+    document.getElementById("seeMoreBtn").classList.add("d-none");
+  });
 
-langToggleBtn.addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "fr" : "en";
-  langToggleBtn.textContent = currentLang.toUpperCase();
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      e.target.classList.add("active");
+    });
+  });
 
-<<<<<<< HEAD
-=======
-  // update all translatable content
->>>>>>> 59ab65e (Add video and other updates)
-  document.querySelector("header p").innerHTML = translations[currentLang].headerParagraph;
-  document.querySelector("#about h2").textContent = translations[currentLang].aboutTitle;
-  document.querySelector("#about > div:first-child p").textContent = translations[currentLang].aboutText;
-  document.querySelector("#projects h2").textContent = translations[currentLang].projectsTitle;
-  document.querySelector("#skills h2").textContent = translations[currentLang].skillsTitle;
-  document.querySelector("#contact h2").textContent = translations[currentLang].contactTitle;
-  document.querySelector("#contact p").innerHTML = translations[currentLang].contactText;
-});
+  const darkModeToggle = document.querySelector(".dark-mode-toggle");
+  const logoImg = document.getElementById("mode-logo");
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const icon = darkModeToggle.querySelector("i");
+    if (document.body.classList.contains("dark-mode")) {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+      if (logoImg) logoImg.src = "images/mylogo-pink.png";
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+      if (logoImg) logoImg.src = "images/mylogo-black.png";
+    }
+  });
 
-  </script>
+  const langToggleBtn = document.querySelector(".lang-toggle");
+  const translations = {
+    en: {
+      headerParagraph: "Designing intuitive experiences that connect people and purpose.",
+      aboutTitle: "About Me",
+      aboutText: "Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.",
+      projectsTitle: "My Projects",
+      skillsTitle: "Skills",
+      contactTitle: "Contact Me",
+      contactText: "You can reach me at <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> or use my social links below."
+    },
+    fr: {
+      headerParagraph: "Créer des expériences intuitives qui relient les gens et le sens.",
+      aboutTitle: "À propos de moi",
+      aboutText: "Bonjour ! Je suis Maram, designer UI/UX avec une âme créative et une passion pour créer des expériences numériques fluides et agréables. Grâce à mon parcours en multimédia et design graphique, j’aime transformer les idées en interfaces intuitives et esthétiques, que ce soit pour une application mobile ou un site web. Je tiens profondément à rendre la technologie humaine, accessible et agréable pour tous.",
+      projectsTitle: "Mes Projets",
+      skillsTitle: "Compétences",
+      contactTitle: "Contactez-moi",
+      contactText: "Vous pouvez me joindre à <a href='mailto:outmaram04@gmail.com'>outmaram04@gmail.com</a> ou utiliser mes réseaux sociaux ci-dessous."
+    }
+  };
+
+  let currentLang = "en";
+  langToggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "fr" : "en";
+    langToggleBtn.textContent = currentLang.toUpperCase();
+
+    document.querySelector("header p").innerHTML = translations[currentLang].headerParagraph;
+    document.querySelector("#about h2").textContent = translations[currentLang].aboutTitle;
+    document.querySelector("#about > div:first-child p").textContent = translations[currentLang].aboutText;
+    document.querySelector("#projects h2").textContent = translations[currentLang].projectsTitle;
+    document.querySelector("#skills h2").textContent = translations[currentLang].skillsTitle;
+    document.querySelector("#contact h2").textContent = translations[currentLang].contactTitle;
+    document.querySelector("#contact p").innerHTML = translations[currentLang].contactText;
+  });
+</script>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
