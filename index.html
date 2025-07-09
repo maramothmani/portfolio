@@ -608,7 +608,11 @@ body.dark-mode .dot.active {
     justify-content: center;
   }
 }
-
+@media (max-width: 768px) {
+  nav.navbar {
+    display: none !important;
+  }
+}
 
   </style>
 </head>
@@ -625,15 +629,15 @@ body.dark-mode .dot.active {
 </header>
 
 <nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container justify-content-center">
-    <a class="nav-link active" href="#about">About</a>
-    <a class="nav-link" href="#projects">Projects</a>
-    <a class="nav-link" href="#skills">Skills</a>
-    <a class="nav-link" href="#testimonials">Reviews</a>
-    <a class="nav-link" href="#contact">Contact</a>
-
+  <div class="container justify-content-center" id="navbarNav">
+    <a class="nav-link active" href="#about" id="nav-about">About</a>
+    <a class="nav-link" href="#projects" id="nav-projects">Projects</a>
+    <a class="nav-link" href="#skills" id="nav-skills">Skills</a>
+    <a class="nav-link" href="#testimonials" id="nav-reviews">Reviews</a>
+    <a class="nav-link" href="#contact" id="nav-contact">Contact</a>
   </div>
 </nav>
+
 
 <section id="about" class="section">
   <div>
@@ -781,7 +785,7 @@ I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating 
         <p>⭐️⭐️⭐️⭐️⭐️</p>
       </div>
       <div class="testimonial-card">
-        <p class="mb-3 fst-italic">« Un Travail Parfait »</p>
+        <p class="mb-3 fst-italic"> "Un Travail Parfait"</p>
         <h6 class="fw-bold">– kaabich, Tunisia</h6>
         <p>⭐️⭐️⭐️⭐️⭐️</p>
       </div>
@@ -927,8 +931,17 @@ I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating 
       projectsTitle: "My Projects",
       skillsTitle: "Skills",
       contactTitle: "Contact Me",
-      contactText: " I’d be delighted to collaborate and bring your ideas to life. Please don’t hesitate to get in touch if you have a project in mind or want to explore how we can work together."
-    },
+      contactText: " I’d be delighted to collaborate and bring your ideas to life. Please don’t hesitate to get in touch if you have a project in mind or want to explore how we can work together.",
+   
+        nav: {
+      about: "About",
+      projects: "Projects",
+      skills: "Skills",
+      reviews: "Reviews",
+      contact: "Contact"
+    }
+  },
+    
     fr: {
       headerParagraph: "Créer des expériences intuitives qui relient les gens et le sens.",
       aboutTitle: "À propos de moi",
@@ -936,7 +949,14 @@ I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating 
       projectsTitle: "Mes Projets",
       skillsTitle: "Compétences",
       contactTitle: "Contactez-moi",
-      contactText: "Je serais ravie de collaborer et de concrétiser vos idées. N’hésitez pas à me contacter si vous avez un projet en tête ou souhaitez explorer une collaboration."
+      contactText: "Je serais ravie de collaborer et de concrétiser vos idées. N’hésitez pas à me contacter si vous avez un projet en tête ou souhaitez explorer une collaboration.",
+        nav: {
+      about: "À propos",
+      projects: "Projets",
+      skills: "Compétences",
+      reviews: "Avis",
+      contact: "Contact"
+    }
     }
   };
 
@@ -1012,6 +1032,29 @@ langToggleBtn.addEventListener("click", () => {
   document.querySelector("#skills h2").textContent = translations[currentLang].skillsTitle;
   document.querySelector("#contact h2").textContent = translations[currentLang].contactTitle;
   document.querySelector("#contact p").innerHTML = translations[currentLang].contactText;
+  document.getElementById("nav-about").textContent = translations[currentLang].nav.about;
+  document.getElementById("nav-projects").textContent = translations[currentLang].nav.projects;
+  document.getElementById("nav-skills").textContent = translations[currentLang].nav.skills;
+  document.getElementById("nav-reviews").textContent = translations[currentLang].nav.reviews;
+  document.getElementById("nav-contact").textContent = translations[currentLang].nav.contact;
+
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card, index) => {
+    const titleEl = card.querySelector(".card-title");
+    const paragraphs = card.querySelectorAll(".card-text");
+
+    if (currentLang === "en") {
+      titleEl.textContent = projectCardsData[index].title_en;
+      paragraphs[0].textContent = projectCardsData[index].text_en;
+      paragraphs[1].innerHTML = `<span class="tools-text"><strong>Tools:</strong> ${projectCardsData[index].tools_en}</span>`;
+    } else {
+      titleEl.textContent = projectCardsData[index].title_fr;
+      paragraphs[0].textContent = projectCardsData[index].text_fr;
+      paragraphs[1].innerHTML = `<span class="tools-text"><strong>Outils :</strong> ${projectCardsData[index].tools_fr}</span>`;
+    }
+  });
+});
+
 
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach((card, index) => {
@@ -1027,8 +1070,7 @@ paragraphs[1].innerHTML = `<span class="tools-text"><strong>Tools:</strong> ${pr
       paragraphs[0].textContent = projectCardsData[index].text_fr;
       paragraphs[1].innerHTML = `<span class="tools-text"><strong>Outils :</strong> ${projectCardsData[index].tools_fr}</span>`;
     }
-  });
-});  
+  });  
 
 let currentReview = 0;
 const track = document.querySelector(".testimonial-track");
