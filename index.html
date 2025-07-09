@@ -17,7 +17,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <style>
-    /* Your existing CSS here (unchanged) */
     body {
       font-family: "Open Sans", sans-serif;
       background: #fefefe;
@@ -25,7 +24,6 @@
       position: relative;
       z-index: 1;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -41,17 +39,14 @@
         radial-gradient(circle at 50% 90%, rgba(255,182,193,0.1) 0%, transparent 50%);
       animation: floatBackground 20s ease-in-out infinite;
     }
-
     @keyframes floatBackground {
-      0%,
-      100% {
+      0%, 100% {
         background-position: 0% 0%, 100% 100%, 50% 100%;
       }
       50% {
         background-position: 10% 10%, 90% 60%, 48% 80%;
       }
     }
-
     header {
       background: #FFD9DF;
       padding: 30px 20px 60px;
@@ -67,7 +62,7 @@
     header h1 {
       font-family: "DM Serif Display", serif;
       font-size: 3em;
-      margin: 0;
+      margin: 60px 0 0 0;
       line-height: 1.1;
     }
     header p {
@@ -75,7 +70,6 @@
       margin-top: 10px;
       max-width: 600px;
     }
-
     #mode-logo {
       position: absolute;
       top: 30px;
@@ -84,7 +78,6 @@
       z-index: 10;
       user-select: none;
     }
-
     .header-controls {
       position: absolute;
       top: 20px;
@@ -114,7 +107,6 @@
     .btn-toggle i {
       font-size: 1.1em;
     }
-
     nav {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -128,7 +120,6 @@
       font-weight: bold;
       position: relative;
     }
-
     nav a.active {
       color: #d46b8f;
     }
@@ -142,7 +133,6 @@
       background-color: #fbb6c2;
       border-radius: 3px;
     }
-
     .section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -150,14 +140,12 @@
       position: relative;
       z-index: 1;
     }
-
     h2 {
       font-family: "DM Serif Display", serif;
       font-size: 2.5em;
       color: #111;
       margin-bottom: 30px;
     }
-
     #about {
       display: flex;
       flex-wrap: wrap;
@@ -186,7 +174,6 @@
       transition: none;
       user-select: none;
     }
-
     .skills-tags span {
       display: inline-block;
       background: #FFD9DF;
@@ -196,23 +183,19 @@
       margin: 5px;
       font-size: 0.95em;
     }
-
     .project-card {
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .project-card:hover {
       transform: scale(1.03);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-
     .socials a {
       margin: 0 10px;
       font-size: 1.5em;
       color: #333;
     }
-
     footer {
       background: #FFD9DF;
       text-align: center;
@@ -221,19 +204,16 @@
       position: relative;
       z-index: 1;
     }
-
     .modal-dialog {
       max-width: 1200px;
       width: 100%;
       margin: 1rem auto;
     }
-
     .modal-content {
       max-height: 100vh;
       overflow-y: auto;
       position: relative;
     }
-
     .modal-header {
       position: sticky;
       top: 0;
@@ -241,7 +221,6 @@
       z-index: 1050;
       border-bottom: 1px solid #ccc;
     }
-
     #modalImage {
       display: block;
       width: 100%;
@@ -249,7 +228,6 @@
       object-fit: contain;
       margin: 0 auto 20px auto;
     }
-
     body.dark-mode {
       background: #121212;
       color: #eee;
@@ -287,29 +265,6 @@
       border-color: #4a2a3b;
     }
     body.dark-mode .modal-content {
-  background-color: #1f1f1f;
-  color: #eee;
-}
-body.dark-mode .btn-close {
-  filter: invert(1);
-}
-body.dark-mode ::-webkit-scrollbar {
-  width: 8px;
-}
-
-body.dark-mode ::-webkit-scrollbar-track {
-  background: #1f1f1f;
-}
-
-body.dark-mode ::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
-
-body.dark-mode ::-webkit-scrollbar-thumb:hover {
-  background-color: #aaa;
-}
-
       background-color: #1f1f1f;
       color: #eee;
     }
@@ -329,89 +284,27 @@ body.dark-mode ::-webkit-scrollbar-thumb:hover {
     body.dark-mode ::-webkit-scrollbar-thumb:hover {
       background-color: #aaa;
     }
-
     body.dark-mode h2 {
       color: #fff;
     }
-    @media (max-width: 576px) {
-  #mode-logo {
-    height: 50px;
-    top: 10px;
-    left: 10px;
-  }
-
-  .header-controls {
-    top: 15px;
-    right: 10px;
-  }
-
-  .btn-toggle {
-    font-size: 0.8em;
-    padding: 4px 8px;
-  }
-}
-header h1 {
-  margin-top: 60px;
-}
-
-@media (max-width: 576px) {
-  header h1 {
-    font-size: 2em;
-    margin-top: 80px;   
-  }
-
-  header p {
-    font-size: 1em;
-    margin-top: 10px;
-  }
-}
-@media (max-width: 768px) {
-  #about {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #about > div:first-child {
-    max-width: 100%;
-  }
-
-  #about > div:last-child {
-    margin-top: 20px;
-  }
-}
-.btn-toggle {
-  font-size: 1em;
-  padding: 8px 14px;
-  border-width: 2px;
-
     @media (max-width: 576px) {
       #mode-logo {
         height: 50px;
         top: 10px;
         left: 10px;
       }
-
       .header-controls {
         top: 15px;
         right: 10px;
       }
-
       .btn-toggle {
         font-size: 0.8em;
         padding: 4px 8px;
       }
-    }
-    header h1 {
-      margin-top: 60px;
-    }
-
-    @media (max-width: 576px) {
       header h1 {
         font-size: 2em;
-        margin-top: 80px;   
+        margin-top: 80px;
       }
-
       header p {
         font-size: 1em;
         margin-top: 10px;
@@ -423,11 +316,9 @@ header h1 {
         align-items: center;
         text-align: center;
       }
-
       #about > div:first-child {
         max-width: 100%;
       }
-
       #about > div:last-child {
         margin-top: 20px;
       }
@@ -438,9 +329,246 @@ header h1 {
       border-width: 2px;
     }
     .text-center {
-  text-align: center;
-  width: 100%;
+      text-align: center;
+      width: 100%;
+    }
+    #seeMoreBtn {
+      display: inline-block;
+      margin: 0 auto;
+    }
+    .card-title {
+      font-weight: 700;
+    }
+    body.dark-mode .project-card {
+      background-color: #2a1a1a;
+      color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode .project-card .card-title,
+    body.dark-mode .project-card .card-text,
+    body.dark-mode .project-card strong {
+      color: white;
+    }
+.tools-text,
+.tools-text strong,
+.project-card .card-text strong {
+  color: #555 !important; 
 }
+
+.tools-text strong,
+.project-card .card-text strong {
+  font-weight: 700; 
+}
+
+body.dark-mode .tools-text,
+body.dark-mode .tools-text strong,
+body.dark-mode .project-card .card-text strong {
+  color: #ff69b4 !important; 
+}
+.card-body {
+  min-height: 180px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(0.6);
+}
+
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.small-btn {
+  font-size: 0.9em;
+  padding: 6px 16px;
+  display: inline-block;
+}
+
+#testimonials {
+  background: #fefefe;
+  
+}
+
+body.dark-mode #testimonials {
+  background: #1f1f1f;
+}
+.testimonial-slider {
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+   padding-bottom: 30px;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.testimonial-card {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  min-height: 100px; 
+}
+
+.dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #d46b8f;
+  transform: scale(1.2);
+}
+
+body.dark-mode .dot {
+  background-color: #444;
+}
+
+body.dark-mode .dot.active {
+  background-color: #fbb6c2;
+}
+.contact-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  padding-right: 0;
+  border-right: none;
+  text-align: left;
+  margin-left: -80px;
+  border-right: 2px solid #d46b8f;
+  padding-right: 40px;
+}
+
+.contact-left h2 {
+  margin-left: -10px;
+  padding-left: 0;
+}
+
+.contact-left .profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  justify-content: flex-start;
+  margin-left: 0;
+}
+
+.contact-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d46b8f;
+}
+
+.contact-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-intro {
+  margin-top: 10px;
+  max-width: 500px;
+  color: #555;
+  line-height: 1.5;
+  margin-left: 0;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 40px;
+}
+
+.email-intro,
+.social-intro {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #555;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-email i {
+  font-size: 1.5rem;
+  color: #d46b8f;
+}
+
+.contact-email a {
+  color: #d46b8f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-socials i {
+  font-size: 1.5rem;
+  color: #d46b8f;
+  transition: transform 0.3s ease;
+}
+
+.contact-socials i:hover {
+  transform: scale(1.2);
+  color: #fbb6c2;
+}
+.dark-mode .contact-name,
+.dark-mode .contact-intro,
+.dark-mode .email-intro,
+.dark-mode .social-intro {
+  color: white;
+}
+
+
   </style>
 </head>
 <body>
@@ -460,6 +588,9 @@ header h1 {
     <a class="nav-link active" href="#about">About</a>
     <a class="nav-link" href="#projects">Projects</a>
     <a class="nav-link" href="#skills">Skills</a>
+    <a class="nav-link" href="#testimonials">Reviews</a>
+    <a class="nav-link" href="#contact">Contact</a>
+
   </div>
 </nav>
 
@@ -467,8 +598,7 @@ header h1 {
   <div>
     <h2>About Me</h2>
     <p>
-      Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.
-    </p>
+I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating meaningful digital experiences that blend creativity, clarity, and empathy. With real-world freelance and academic experience, I focus on human-centered design to solve real problems.    </p>
   </div>
   <div>
     <img src="images/img.png" alt="Maram Othmani" />
@@ -478,46 +608,81 @@ header h1 {
 <section id="projects" class="section">
   <h2>My Projects</h2>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <!-- 6 main projects -->
+    
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('Online Thrift | Mobile Application | UI Design', 'images/onlinethrift.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/onlinethrift.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Online Thrift" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Online Thrift – Mobile App UI</h5>
+          <p class="card-text">User-centered shopping experience for second-hand fashion enthusiasts.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Prototyping<br><br></p>
+        </div>
       </div>
     </div>
+
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('Eco Tic | UI/UX Design', 'images/ecotic.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/Slice.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Eco Tic" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Eco Tic – UX/UI Design</h5>
+          <p class="card-text">Educational platform that encourages eco-friendly behavior.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Wireframing, UX Research, Prototyping, User Flow</p>
+        </div>
       </div>
     </div>
+
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('FairPlay Digital | UI/UX Design', 'images/fairplay.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/Slice7.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="FairPlay Digital" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">FairPlay Digital – UX/UI Design</h5>
+          <p class="card-text">Website for a digital agency focused on SEO and marketing.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Wireframing, Prototyping, User Flow</p>
+        </div>
       </div>
     </div>
+
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('InstaMeal | Mobile Application UI Design', 'images/instameal.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/Slice1.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="InstaMeal" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">InstaMeal – Mobile App UI</h5>
+          <p class="card-text">Meal planning and ordering app with an intuitive and clean interface.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Prototyping</p>
+        </div>
       </div>
     </div>
+
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('CraftHeaven | Home Page UI Design', 'images/craftheaven.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/Slice2.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="CraftHeaven" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">CraftHeaven – Website UI</h5>
+          <p class="card-text">Homepage design for an online handmade crafts platform.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma</p>
+        </div>
       </div>
     </div>
+
     <div class="col">
       <div class="card project-card overflow-hidden" onclick="openModal('Chalet Sissi | Website UI/UX Design', 'images/presentation.jpg')">
         <div class="ratio ratio-1x1">
           <img src="images/Slice5.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Chalet Sissi" />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Chalet Sissi – Website UI/UX</h5>
+          <p class="card-text">Luxury chalet website with sleek design, easy booking, and exclusive member access.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Wireframing, Prototyping</p>
         </div>
       </div>
     </div>
@@ -527,44 +692,115 @@ header h1 {
         <div class="ratio ratio-1x1">
           <img src="images/Slice10.jpg" class="w-100 h-100" style="object-fit: cover; object-position: top;" alt="Alerta" />
         </div>
+        <div class="card-body">
+          <h5 class="card-title">Alerta – UX/UI Case Study</h5>
+          <p class="card-text">Personal safety wearable + app with real-time alerts and discreet emergency features.</p>
+          <p class="card-text tools-text"><strong>Tools:</strong> Figma, Wireframing, UX Research, Prototyping</p>
+        </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-4 w-100">
-  <button id="seeMoreBtn" class="btn btn-toggle">See More</button>
-</div>
+
+    <div class="text-center mt-4">
+      <button id="seeMoreBtn" class="btn btn-toggle">See More</button>
+    </div>
   </div>
 </section>
+
 
 <section id="skills" class="section">
   <h2>Skills</h2>
   <div class="skills-tags">
     <span>Wireframing</span>
     <span>Prototyping</span>
-    <span>User Flows</span>
-    <span>Responsive Design</span>
-    <span>Figma</span>
-    <span>Adobe XD</span>
-    <span>Photoshop</span>
-    <span>Illustrator</span>
-    <span>3D Modeling</span>
-    <span>HTML/CSS</span>
-    <span>Video Editing</span>
-    <span>Bootstrap (Framework)</span>
+      <span>User Flows</span>
+  <span>Responsive Design</span>
+  <span>Figma</span>
+  <span>Adobe XD</span>
+  <span>Photoshop</span>
+  <span>Illustrator</span>
+  <span>3D Modeling</span>
+  <span>HTML/CSS</span>
+  <span>Video Editing</span>
+  <span>Bootstrap (Framework)</span>
+</div>
+</section>
+
+<section id="testimonials" class="section">
+  <h2 class="text-center mb-4">Client Reviews</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <div class="testimonial-card active">
+        <p class="mb-3 fst-italic">“Maram's work on our project has truly exceeded my expectations...”</p>
+        <h6 class="fw-bold">– yesin_h, Germany</h6>
+        <p>⭐️⭐️⭐️⭐️⭐️</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="mb-3 fst-italic">“Maram's work is exceptional as always. She is my favourite UI-UX designer.”</p>
+        <h6 class="fw-bold">– fairplaydigital, Germany</h6>
+        <p>⭐️⭐️⭐️⭐️⭐️</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="mb-3 fst-italic">« Un Travail Parfait »</p>
+        <h6 class="fw-bold">– kaabich, Tunisia</h6>
+        <p>⭐️⭐️⭐️⭐️⭐️</p>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot active" onclick="switchReview(0)"></span>
+      <span class="dot" onclick="switchReview(1)"></span>
+      <span class="dot" onclick="switchReview(2)"></span>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="https://www.fiverr.com/maramothmani" class="btn btn-toggle px-4 py-2 small-btn" target="_blank">See All on Fiverr</a>
   </div>
 </section>
 
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>You can reach me at <a href="mailto:outmaram04@gmail.com">outmaram04@gmail.com</a> or use my social links below.</p>
+
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Contact</h2>
+      <div class="profile-wrapper">
+        <img src="images/me.jpg" alt="Maram Othmani" class="contact-photo" />
+        <h3 class="contact-name">Maram Othmani</h3>
+      </div>
+      <p class="contact-intro">
+        I’d love to connect! Reach out if you have a project in mind or just want to say hi.
+      </p>
+    </div>
+
+    <div class="contact-right">
+      <p class="email-intro">Email me directly on</p>
+      <div class="contact-email">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:outmaram04@gmail.com">outmaram04@gmail.com</a>
+      </div>
+
+      <p class="social-intro">or use my socials:</p>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/maram-othmani/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.behance.net/maramothmaniii" target="_blank" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://wa.me/21622918941" target="_blank" aria-label="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+
 
 <footer>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/maram-othmani/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.behance.net/maramothmaniii" target="_blank"><i class="fab fa-behance"></i></a>
-    <a href="https://wa.me/21622918941" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
-  </div>
-  <p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
+
+  <br><p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
 </footer>
 
 <!-- Modal -->
@@ -588,7 +824,6 @@ header h1 {
   </div>
 </div>
 
-<!-- Script -->
 <script>
   function openModal(title, imageUrl, hasVideo = false) {
     const modalTitle = document.getElementById("modalTitle");
@@ -615,14 +850,14 @@ header h1 {
   }
 
   document.getElementById("seeMoreBtn").addEventListener("click", () => {
-    document.querySelectorAll(".extra-project").forEach((el) => el.classList.remove("d-none"));
+    document.querySelectorAll(".extra-project").forEach(el => el.classList.remove("d-none"));
     document.getElementById("seeMoreBtn").classList.add("d-none");
   });
 
   const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      navLinks.forEach((l) => l.classList.remove("active"));
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      navLinks.forEach(l => l.classList.remove("active"));
       e.target.classList.add("active");
     });
   });
@@ -648,7 +883,7 @@ header h1 {
     en: {
       headerParagraph: "Designing intuitive experiences that connect people and purpose.",
       aboutTitle: "About Me",
-      aboutText: "Hi there! I'm Maram, a UI/UX designer with a creative soul and a love for crafting smooth, delightful digital experiences. With a background in multimedia and graphic design, I enjoy turning ideas into intuitive, beautiful interfaces! Whether it's a mobile app or a website. I care deeply about making technology feel human, accessible, and enjoyable for everyone.",
+      aboutText: "I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating meaningful digital experiences that blend creativity, clarity, and empathy. With real-world freelance and academic experience, I focus on human-centered design to solve real problems.",
       projectsTitle: "My Projects",
       skillsTitle: "Skills",
       contactTitle: "Contact Me",
@@ -657,7 +892,7 @@ header h1 {
     fr: {
       headerParagraph: "Créer des expériences intuitives qui relient les gens et le sens.",
       aboutTitle: "À propos de moi",
-      aboutText: "Bonjour ! Je suis Maram, designer UI/UX avec une âme créative et une passion pour créer des expériences numériques fluides et agréables. Grâce à mon parcours en multimédia et design graphique, j’aime transformer les idées en interfaces intuitives et esthétiques, que ce soit pour une application mobile ou un site web. Je tiens profondément à rendre la technologie humaine, accessible et agréable pour tous.",
+      aboutText: "Je m'appelle Maram, je suis designer UX/UI basée en Tunisie. Je suis passionnée par la création d’expériences numériques porteuses de sens, alliant créativité, clarté et empathie. Grâce à mes expériences réelles en freelance et en milieu académique, je me concentre sur le design centré sur l’humain pour résoudre des problèmes concrets.",
       projectsTitle: "Mes Projets",
       skillsTitle: "Compétences",
       contactTitle: "Contactez-moi",
@@ -666,23 +901,122 @@ header h1 {
   };
 
   let currentLang = "en";
-  langToggleBtn.addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "fr" : "en";
-    langToggleBtn.textContent = currentLang.toUpperCase();
 
-    document.querySelector("header p").innerHTML = translations[currentLang].headerParagraph;
-    document.querySelector("#about h2").textContent = translations[currentLang].aboutTitle;
-    document.querySelector("#about > div:first-child p").textContent = translations[currentLang].aboutText;
-    document.querySelector("#projects h2").textContent = translations[currentLang].projectsTitle;
-    document.querySelector("#skills h2").textContent = translations[currentLang].skillsTitle;
-    document.querySelector("#contact h2").textContent = translations[currentLang].contactTitle;
-    document.querySelector("#contact p").innerHTML = translations[currentLang].contactText;
+  const projectCardsData = [
+    {
+      title_en: "Online Thrift – Mobile App UI",
+      text_en: "User-centered shopping experience for second-hand fashion enthusiasts.",
+      tools_en: "Figma, Prototyping",
+      title_fr: "Online Thrift – UI Application Mobile",
+      text_fr: "Expérience d'achat centrée utilisateur pour les amateurs de mode seconde main.",
+      tools_fr: "Figma, Prototypage"
+    },
+    {
+      title_en: "Eco Tic – UX/UI Design",
+      text_en: "Educational platform that encourages eco-friendly behavior.",
+      tools_en: "Figma, Wireframing, UX Research, Prototyping, User Flow",
+      title_fr: "Eco Tic – Design UX/UI",
+      text_fr: "Plateforme éducative qui encourage les comportements écologiques.",
+      tools_fr: "Figma, Wireframing, Recherche UX, Prototypage, Flux Utilisateur"
+    },
+    {
+      title_en: "FairPlay Digital – UX/UI Design",
+      text_en: "Website for a digital agency focused on SEO and marketing.",
+      tools_en: "Figma, Wireframing, Prototyping, User Flow",
+      title_fr: "FairPlay Digital – Design UX/UI",
+      text_fr: "Site web pour une agence digitale spécialisée en SEO et marketing.",
+      tools_fr: "Figma, Wireframing, Prototypage, Flux Utilisateur"
+    },
+    {
+      title_en: "InstaMeal – Mobile App UI",
+      text_en: "Meal planning and ordering app with an intuitive and clean interface.",
+      tools_en: "Figma, Prototyping",
+      title_fr: "InstaMeal – UI Application Mobile",
+      text_fr: "Application de planification et commande de repas avec interface intuitive et épurée.",
+      tools_fr: "Figma, Prototypage"
+    },
+    {
+      title_en: "CraftHeaven – Website UI",
+      text_en: "Homepage design for an online handmade crafts platform.",
+      tools_en: "Figma",
+      title_fr: "CraftHeaven – UI Site Web",
+      text_fr: "Design de la page d'accueil pour une plateforme de créations artisanales en ligne.",
+      tools_fr: "Figma"
+    },
+    {
+      title_en: "Chalet Sissi – Website UI/UX",
+      text_en: "Luxury chalet website with sleek design, easy booking, and exclusive member access.",
+      tools_en: "Figma, Wireframing, Prototyping",
+      title_fr: "Chalet Sissi – Design UI/UX Site Web",
+      text_fr: "Site chalet luxe, design élégant, réservation simple, accès membres.",
+      tools_fr: "Figma, Wireframing, Prototypage"
+    },
+    {
+      title_en: "Alerta – UX/UI Case Study",
+      text_en: "Personal safety wearable + app with real-time alerts and discreet emergency features.",
+      tools_en: "Figma, Wireframing, User Research, Prototyping",
+      title_fr: "Alerta – Étude de Cas UX/UI",
+      text_fr: "Appareil de sécurité personnel + application avec alertes en temps réel et fonctionnalités d'urgence discrètes.",
+      tools_fr: "Figma, Wireframing, Recherche Utilisateur, Prototypage"
+    }
+  ];
+
+langToggleBtn.addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "fr" : "en";
+  langToggleBtn.textContent = currentLang.toUpperCase();
+
+  document.querySelector("header p").innerHTML = translations[currentLang].headerParagraph;
+  document.querySelector("#about h2").textContent = translations[currentLang].aboutTitle;
+  document.querySelector("#about > div:first-child p").textContent = translations[currentLang].aboutText;
+  document.querySelector("#projects h2").textContent = translations[currentLang].projectsTitle;
+  document.querySelector("#skills h2").textContent = translations[currentLang].skillsTitle;
+  document.querySelector("#contact h2").textContent = translations[currentLang].contactTitle;
+  document.querySelector("#contact p").innerHTML = translations[currentLang].contactText;
+
+  const projectCards = document.querySelectorAll(".project-card");
+  projectCards.forEach((card, index) => {
+    const titleEl = card.querySelector(".card-title");
+    const paragraphs = card.querySelectorAll(".card-text");
+
+    if (currentLang === "en") {
+      titleEl.textContent = projectCardsData[index].title_en;
+      paragraphs[0].textContent = projectCardsData[index].text_en;
+paragraphs[1].innerHTML = `<span class="tools-text"><strong>Tools:</strong> ${projectCardsData[index].tools_en}</span>`;
+    } else {
+      titleEl.textContent = projectCardsData[index].title_fr;
+      paragraphs[0].textContent = projectCardsData[index].text_fr;
+      paragraphs[1].innerHTML = `<span class="tools-text"><strong>Outils :</strong> ${projectCardsData[index].tools_fr}</span>`;
+    }
   });
+});  
+
+let currentReview = 0;
+const track = document.querySelector(".testimonial-track");
+const reviewCards = document.querySelectorAll(".testimonial-card");
+const reviewDots = document.querySelectorAll(".dot");
+
+function switchReview(index) {
+  const offset = -index * 100;
+  track.style.transform = `translateX(${offset}%)`;
+
+  reviewDots.forEach(dot => dot.classList.remove("active"));
+  reviewDots[index].classList.add("active");
+
+  currentReview = index;
+}
+
+setInterval(() => {
+  const nextIndex = (currentReview + 1) % reviewCards.length;
+  switchReview(nextIndex);
+}, 5000);
+
+reviewDots.forEach((dot, i) => {
+  dot.addEventListener("click", () => switchReview(i));
+});
+
+
 </script>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"
-  ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
