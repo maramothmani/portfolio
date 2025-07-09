@@ -767,9 +767,9 @@ I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating 
         <img src="images/me.jpg" alt="Maram Othmani" class="contact-photo" />
         <h3 class="contact-name">Maram Othmani</h3>
       </div>
-      <p class="contact-intro">
-        I’d love to connect! Reach out if you have a project in mind or just want to say hi.
-      </p>
+      <p id="connect-message">
+  I’d be delighted to collaborate and bring your ideas to life. Please don’t hesitate to get in touch if you have a project in mind or want to explore how we can work together.
+</p>
     </div>
 
     <div class="contact-right">
@@ -803,8 +803,7 @@ I’m Maram, a UX/UI designer based in Tunisia. I’m passionate about creating 
   <br><p>&copy; 2025 Maram Othmani — All Rights Reserved</p>
 </footer>
 
-<!-- Modal -->
-<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -989,6 +988,16 @@ paragraphs[1].innerHTML = `<span class="tools-text"><strong>Tools:</strong> ${pr
     }
   });
 });  
+const toggleBtn = document.getElementById('your-language-toggle-button-id');
+const message = document.getElementById('connect-message');
+
+toggleBtn.addEventListener('click', () => {
+  if (message.textContent.includes("I’d be delighted")) {
+    message.textContent = "Je serais ravie de collaborer et de concrétiser vos idées. N’hésitez pas à me contacter si vous avez un projet en tête ou souhaitez explorer une collaboration.";
+  } else {
+    message.textContent = "I’d be delighted to collaborate and bring your ideas to life. Please don’t hesitate to get in touch if you have a project in mind or want to explore how we can work together.";
+  }
+});
 
 let currentReview = 0;
 const track = document.querySelector(".testimonial-track");
